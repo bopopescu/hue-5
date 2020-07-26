@@ -162,7 +162,7 @@ class ResourceManagerApi(object):
       response = function(*args, **kwargs)
     except RestException, e:
       # YARN-2605: Yarn does not use proper HTTP redirects when the standby RM has
-      # failed back to the master RM.
+      # failed back to the main RM.
       if e.code == 307 and e.message.startswith('This is standby RM'):
         LOG.info('Received YARN failover redirect response, attempting to resolve redirect.')
         try:

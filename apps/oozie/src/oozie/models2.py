@@ -1810,9 +1810,9 @@ class DistCpAction(Action):
 class SparkAction(Action):
   TYPE = 'spark'
   FIELDS = {
-     'spark_master': {
-          'name': 'spark_master',
-          'label': _('Spark Master'),
+     'spark_main': {
+          'name': 'spark_main',
+          'label': _('Spark Main'),
           'value': 'local[*]',
           'help_text': _('Ex: spark://host:port, mesos://host:port, yarn, or local.'),
           'type': ''
@@ -1903,7 +1903,7 @@ class SparkAction(Action):
 
   @classmethod
   def get_mandatory_fields(cls):
-    return [cls.FIELDS['spark_master'], cls.FIELDS['mode'], cls.FIELDS['jars']]
+    return [cls.FIELDS['spark_main'], cls.FIELDS['mode'], cls.FIELDS['jars']]
 
 
 class KillAction(Action):
